@@ -1,10 +1,167 @@
-.App {
+.App-body {
   text-align: center;
+  position:absolute;
+  width: 360px;
+  height: 640px;
+  /*overflow-x: scroll;*/
+  
+  background: linear-gradient(163.28deg, rgba(206, 225, 236, 0.96) 2.17%, rgba(219, 83, 255, 0.96) 96.14%);
+  border-radius: 24px;
+}
+.App-titulo{
+  position: absolute;
+left: -18.88%;
+right: -18.37%;
+top: 0%;
+bottom: -340%;
+
+font-family: 'Comic Sans MS';
+font-style: italic;
+font-weight: 700;
+font-size: 24px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.055em;
+color: #000000;
+display: block;
+}
+.App-subtitulo{
+ 
+position: absolute;
+width: 240px;
+height: 42px;
+left: 60px;
+top: 104px;
+
+background: linear-gradient(92.33deg, #29BC1C 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+border: 4px solid #107E1B;
+border-radius: 23px;
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+
+}
+.App-tablaItems{
+  
+position: absolute;
+width: 334px;
+height: 345px;
+left: 13px;
+top: 188px;
+
+background: #E1FF2B;
+border-radius: 23px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.App-fecha{
+  position: absolute;
+width: 49px;
+height: 22px;
+left: 14px;
+top: 160px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #000000;
+
+}
+.App-mesa{
+  position: absolute;
+width: 44px;
+height: 22px;
+right: 38px;
+top: 160px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #000000;
+}
+.App-agregarPedido{
+
+  position: absolute;
+  width: 119px;
+  height: 28px;
+  left: 3px;
+  top: 602px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  
+  color: #000000;
+}
+
+.App-nuevaMesa{
+  position: absolute;
+width: 109px;
+height: 22px;
+left: 116px;
+top: 602px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+color: #000000;
+}
+.App-logo{
+  position: absolute;
+  width: 58px;
+  height: 59px;
+  left: 112px;
+  top: 537px;
+
+  
+}
+.App-mas{
+  position: absolute;
+width: 68px;
+height: 61px;
+left: 16px;
+top: 540px;
+
+background: #000000;
+}
+.App-total{
+  position: absolute;
+width: 106px;
+height: 45px;
+left: 169px;
+top: 544px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 45px;
+/* identical to box height */
+
+text-align: center;
+
+color: #0A4605;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,14 +171,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+width: 360px;
+height: 97px;
+
+background: conic-gradient(from 180deg at 50% 50%, #FF8A00 0deg, rgba(193, 64, 239, 0.96) 228.75deg, #FF8A00 360deg);
+border-radius: 23px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
 }
 
 .App-link {
