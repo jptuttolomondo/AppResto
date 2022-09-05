@@ -14,7 +14,7 @@ function App() {
 <div className="App-fecha">Fecha:</div>
 <div className="App-mesa">Mesa:</div>
 <div className="App-total">Total:</div>
-<div className="App-agregarPedido">Agregar Item</div>
+<div className="App-agregarPedido">Nuevo Item</div>
 <div className="App-nuevaMesa">Nueva Mesa</div>
 <div className="App-mas"><img src={botonMas} /></div>
 <div className="App-logo"><img src={logo} /></div>
