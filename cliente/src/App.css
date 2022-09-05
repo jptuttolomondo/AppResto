@@ -77,6 +77,21 @@ line-height: 22px;
 color: #000000;
 
 }
+.App-hora{
+  position: absolute;
+width: 42px;
+height: 22px;
+left: 149px;
+top: 160px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #000000;
+}
 .App-mesa{
   position: absolute;
 width: 44px;

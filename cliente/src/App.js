@@ -12,6 +12,7 @@ function App() {
 <div className="App-subtitulo">Atención de mesas</div>
 <div className="App-tablaItems"></div>
 <div className="App-fecha">Fecha:</div>
+<div className="App-hora">Hora:</div>
 <div className="App-mesa">Mesa:</div>
 <div className="App-total">Total:</div>
 <div className="App-agregarPedido">Nuevo Item</div>
