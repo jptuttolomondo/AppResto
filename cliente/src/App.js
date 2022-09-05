@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   return (
+    <div align="center">
 <div className="App-body">
       <div className="App-header">
       <div className="App-titulo">Aplicación para <br></br> Restaurantes/Café</div>
@@ -17,6 +18,7 @@ function App() {
 <div className="App-nuevaMesa">Nueva Mesa</div>
 <div className="App-mas"><img src={botonMas} /></div>
 <div className="App-logo"><img src={logo} /></div>
+ </div>
  </div>
   );
 }
