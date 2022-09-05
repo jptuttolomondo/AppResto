@@ -4,19 +4,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App-body">
+<div className="App-body">
       <div className="App-header">
-
+      <div className="App-titulo">Aplicación para <br></br> Restaurantes/Café</div>
       </div>
-      <div className="App-titulo">
-      Aplicación para <br></br>
-      Restaurantes/Café
-        </div>
-<div className="App-subtitulo">
-Atención de mesas
-</div>
-<div className="App-tablaItems">
-</div>
+<div className="App-subtitulo">Atención de mesas</div>
+<div className="App-tablaItems"></div>
 <div className="App-fecha">Fecha:</div>
 <div className="App-mesa">Mesa:</div>
 <div className="App-total">Total:</div>
@@ -24,8 +17,7 @@ Atención de mesas
 <div className="App-nuevaMesa">Nueva Mesa</div>
 <div className="App-mas"><img src={botonMas} /></div>
 <div className="App-logo"><img src={logo} /></div>
-
-    </div>
+ </div>
   );
 }
 

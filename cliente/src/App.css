@@ -12,7 +12,7 @@
   position: absolute;
 left: -18.88%;
 right: -18.37%;
-top: 0%;
+top: 2%;
 bottom: -340%;
 
 font-family: 'Comic Sans MS';
@@ -40,7 +40,7 @@ font-family: 'Comic Sans MS';
 font-style: normal;
 font-weight: 700;
 font-size: 20px;
-line-height: 28px;
+line-height: 35px;
 /* identical to box height */
 
 text-align: center;
@@ -112,11 +112,11 @@ color: #000000;
 
 .App-nuevaMesa{
   position: absolute;
-width: 109px;
-height: 22px;
-left: 116px;
-top: 602px;
 
+  width: 109px;
+  height: 22px;
+  left: 116px;
+  top: 602px;
 font-family: 'Comic Sans MS';
 font-style: normal;
 font-weight: 400;
@@ -125,6 +125,7 @@ line-height: 22px;
 text-align: center;
 
 color: #000000;
+
 }
 .App-logo{
   position: absolute;
@@ -190,7 +191,7 @@ flex-grow: 0;
 .App-link {
   color: #61dafb;
 }
-
+/* hace rotar la imagen del cafe
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -199,3 +200,4 @@ flex-grow: 0;
     transform: rotate(360deg);
   }
 }
+*/
