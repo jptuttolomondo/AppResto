@@ -7,7 +7,7 @@ module.exports=(sequelize)=>{
         allowNull:false,
         primaryKey:true
       },
-mozo:{type:DataTypes.STRING,allowNull: false},      
+   
 mesa:{type:DataTypes.ENUM('A','B','C','D','E','F','G','H','I','J','K','L','M','N'),allowNull:false },
 estado:{type:DataTypes.ENUM('PENDIENTE','TOMADO',
 'EN ESPERA','PREPARANDO','LISTO PARA SERVIR',
