@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 
 import {Route,Routes} from 'react-router-dom'
 import {Landing} from'./components/landing.js'
+import { Home } from "./components/home.js";
 import AtencionMesas from './components/atencionMesas.js'
 //import {Home} from './components/home';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
          <Routes>
                 <Route  path="/" element={<Landing/>} > </Route>
                 <Route  path="/mesas" element={<AtencionMesas/>} > </Route>
+                <Route exact path="/home" element={<Home/>} > </Route>
                 
       </Routes>
     </Provider>
