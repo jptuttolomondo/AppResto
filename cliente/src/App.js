@@ -1,27 +1,28 @@
-import logo from './assets/undraw_conversation_re_c26v 1.png'
-import botonMas from'./assets/bxs-plus-circle 1.svg'
+import { Provider } from 'react-redux';
+
+import {Route,Routes} from 'react-router-dom'
+import {Landing} from'./components/landing.js'
+import AtencionMesas from './components/atencionMesas.js'
+//import {Home} from './components/home';
 import './App.css';
 
-function App() {
-  return (
-    <div align="center">
-<div className="App-body">
-      <div className="App-header">
-      <div className="App-titulo">Aplicación para <br></br> Restaurantes/Café</div>
-      </div>
-<div className="App-subtitulo">Atención de mesas</div>
-<div className="App-tablaItems"></div>
-<div className="App-fecha">Fecha:</div>
-<div className="App-hora">Hora:</div>
-<div className="App-mesa">Mesa:</div>
-<div className="App-total">Total:</div>
-<div className="App-agregarPedido">Nuevo Item</div>
-<div className="App-nuevaMesa">Nueva Mesa</div>
-<div className="App-mas"><img src={botonMas} /></div>
-<div className="App-logo"><img src={logo} /></div>
- </div>
- </div>
-  );
-}
 
+import {store}from'./store/index'
+
+function App() {
+  return (      
+   <div >
+        <Provider store= {store}>
+         <Routes>
+                <Route  path="/" element={<Landing/>} > </Route>
+                <Route  path="/mesas" element={<AtencionMesas/>} > </Route>
+                
+      </Routes>
+    </Provider>
+     </div>    
+     );
+} 
 export default App;
+ 
+//
+/* <Route exact path="/home" element={<Home/>} > </Route>*/
