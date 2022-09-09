@@ -1,4 +1,4 @@
-.landing-body {
+.landingPage-body {
     text-align: center;
     position:relative;
     width: 360px;
@@ -8,7 +8,100 @@
     background: linear-gradient(163.28deg, rgba(206, 225, 236, 0.96) 2.17%, rgba(219, 83, 255, 0.96) 96.14%);
     border-radius: 24px;
   }
-  .landing-titulo{
+
+  .landingPage-empresa{
+    position: absolute;
+    
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 120px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+
+
+
+width: 288px;
+height: 140px;
+left: 38px;
+top: 130px;
+
+background: #E3E80D;
+border: 4px solid #2D107E;
+border-radius: 23px;
+
+
+/* Subtitulo */
+
+
+
+
+
+
+
+  }
+.landingPage-logo{
+  
+  position: relative;
+  width: 156px;
+  height: 142px;
+  left: 102px;
+  top: 390px;
+
+  backdrop-filter: blur(0px);
+}
+
+  .landingPage-ingreso{
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 41px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 216px;
+    height: 73px;
+    left: 62px;
+    top: 292px;
+     transition: var(--transition);
+    background: linear-gradient(92.33deg, #0D64E8 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+
+    width: 134px;
+    height: 45px;
+    
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 45px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #000000;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+   
+  
+  }
+  .landingPage-ingreso:hover{
+    background: #0DE8A6;;
+    color: var(--color-bg);
+
+  }
+  .landingPage-titulo{
     position: absolute;
   left: -18.88%;
   right: -18.37%;
@@ -48,7 +141,7 @@
   color: #000000;
   
   }
-.landing-login{
+.landingPage-login{
   position: absolute;
   width: 240px;
   height: 42px;
@@ -74,7 +167,7 @@
   
 
 }
-  .landing-cocina{
+  .landingPage-cocina{
     position: absolute;
 width: 240px;
 height: 42px;
@@ -106,7 +199,7 @@ text-align: center;
 
 color: #000000;
   }
-.landing-caja{
+.landingPage-caja{
   
 position: absolute;
 width: 240px;
@@ -139,7 +232,7 @@ text-align: center;
 
 color: #000000;
 }
-.landing-salir{
+.landingPage-salir{
   position: absolute;
 width: 240px;
 height: 42px;
@@ -211,7 +304,7 @@ text-align: center;
 
 color: #000000;
   }
-  .landing-header {
+  .landingPage-header {
   
   width: 360px;
   height: 97px;

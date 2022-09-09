@@ -179,8 +179,16 @@
   color: #0A4605;
   
   }
-  
-  
+  .Mesas-atras{
+     position: absolute;
+width: 38px;
+height: 35px;
+left: 12px;
+top: 111px;
+
+background: #427C9D;
+  }
+ 
   .Mesas-header {
   
   width: 360px;

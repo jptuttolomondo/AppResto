@@ -74,6 +74,28 @@
   
 
 }
+.landing-login:hover{
+  
+    background: #0DE8A6;;
+    color: var(--color-bg);
+  
+}
+.landing-cocina:hover{
+  background: #0DE8A6;;
+  color: var(--color-bg);
+
+}
+.landing-caja:hover{
+  background: #0DE8A6;;
+  color: var(--color-bg);
+
+}
+
+.landing-atencionMesas:hover{
+  background: #0DE8A6;;
+  color: var(--color-bg);
+
+}
   .landing-cocina{
     position: absolute;
 width: 240px;
@@ -105,6 +127,11 @@ line-height: 28px;
 text-align: center;
 
 color: #000000;
+  }
+  .landing-caja:hover{
+    background: #0DE8A6;;
+    color: var(--color-bg);
+  
   }
 .landing-caja{
   
@@ -138,6 +165,11 @@ line-height: 28px;
 text-align: center;
 
 color: #000000;
+}
+.landing-salir:hover{
+  background: #0DE8A6;;
+  color: var(--color-bg);
+
 }
 .landing-salir{
   position: absolute;

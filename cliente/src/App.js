@@ -4,7 +4,7 @@ import {Route,Routes} from 'react-router-dom'
 import {Landing} from'./components/landing.js'
 import { Home } from "./components/home.js";
 import AtencionMesas from './components/atencionMesas.js'
-//import {Home} from './components/home';
+import {Cocina} from './components/cocina.js';
 import './App.css';
 
 
@@ -18,6 +18,7 @@ function App() {
                 <Route  path="/" element={<Landing/>} > </Route>
                 <Route  path="/mesas" element={<AtencionMesas/>} > </Route>
                 <Route exact path="/home" element={<Home/>} > </Route>
+                <Route exact path="/cocina" element={<Cocina/>} > </Route>
                 
       </Routes>
     </Provider>
