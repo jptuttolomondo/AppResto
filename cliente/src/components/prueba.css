@@ -1,0 +1,74 @@
+.transition{
+    width: 150px;
+    height: 70px;
+    background-color: #ddd;
+    margin: 5px;
+  }
+  .containerCard {
+    display: flexbox;
+    position:absolute;
+    width: 177px;
+  height: 150px;
+  left: 40px;
+  top: 200px;
+  flex-wrap: wrap;
+    text-decoration: none;
+    align-items: center;
+    
+   /* width: 7em;
+    height: 9em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+  */
+  position: absolute;
+width: 30px;
+height: 15px;
+left: 83px;
+top: 190px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+
+color: #D24343;
+    text-align: center;
+    color: rgb(196, 213, 228);
+    border-color: rgb(32, 80, 0);
+  
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 5px;
+  
+    background-color: rgb(18, 19, 18);
+    padding: 0.5em;
+  
+    transition: transform 1s; 
+  }
+
+  .containerCard:hover {  
+  
+   transform:scale(3);
+    transition: transform 1s; 
+    align-self: auto;
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+
+  }
+  .Ease-Out{
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+
+  }
+  
+ 
