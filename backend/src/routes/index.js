@@ -130,7 +130,7 @@ router.get("/comandas", async (req, res) => {
    } 
 )
 router.post("/comanda", async (req, res) => {
-let {mesa,estado,total,tipoDePago,userIdUser}=req.body
+let {mesa,estado,total,tipoDePago,userIdUser,pedido}=req.body
 
 await Comanda.findAll({
   where: {mesa:mesa,estado:estado},
@@ -144,24 +144,22 @@ let [registro,created]=await Comanda.findOrCreate({
    }
   });
 if(created===false) res.send('La comanda ya existe');
-else {res.send("Comanda creada correctamente");
-
-  // let genreDb = await Genre.findAll({
-  //   where: { name: genres }, //genero hay que encontrarlo en el modelo de bd que ya esta guyardado
-  //   //y que coincida con el seleccionado en el formulario de front, que sera genres
-  // });
-  // productCreated.addGenre(genreDb);
- 
+else {
+  for (let i=0; i<pedido.length; i++){
+  let productodb=await Producto.findAll({ where: {productName:pedido[i]}})
+  registro.addProducto(productodb)
+    }
+  res.send("Comanda creada correctamente");
 }
 })
 
 async function deleteComanda(id){
   await Comanda.destroy({
     where:{id:id},
-    // include:{
-    //   model: Genre,
-    //   attributes:['name']
-    // }
+    include:{
+      model: Producto,
+      attributes:['productname']
+    }
   })
   
   }
@@ -232,13 +230,23 @@ let [registro,created]=await Producto.findOrCreate({
     precio}
   });
 if(created===false) res.send('el producto ya existe');
-else res.send("Producto creado correctamente");
+else 
+  res.send("Producto creado correctamente");
+
+
+/*  let genreDb = await Genre.findAll({
+    where: { name: genres }, //genero hay que encontrarlo en el modelo de bd que ya esta guyardado
+    //y que coincida con el seleccionado en el formulario de front, que sera genres
+  });
+  videogameCreated.addGenre(genreDb);
+  res.send("videogame creado correctamente");
+});*/
 
   // let genreDb = await Genre.findAll({
   //   where: { name: genres }, //genero hay que encontrarlo en el modelo de bd que ya esta guyardado
   //   //y que coincida con el seleccionado en el formulario de front, que sera genres
   // });
-  // productCreated.addGenre(genreDb);
+  // productCreated.addGenre(genreDb);registro
  
 });
 
