@@ -10,7 +10,7 @@ export function Home() {
       <div className="landing-titulo">Aplicación para<br></br> Restaurantes/Café</div>
       </div>
 <div className="landing-login">Login</div>
-<Link to ="/mesas"><div className="landing-atencionMesas">Atención de Mesas</div></Link>
+<Link to ="/mesasPortada"><div className="landing-atencionMesas">Atención de Mesas</div></Link>
 <div className="landing-cocina">Cocina</div>
 <div className="landing-caja">Caja</div>
 <div className="landing-salir">Salir</div>

@@ -2,7 +2,7 @@ import logo from '../assets/undraw_conversation_re_c26v 1.png'
 import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import {Link} from 'react-router-dom'
-function AtencionMesas() {
+export function AtencionMesas() {
   return (
     <div align="center">
 <div className="Mesas-body">
@@ -18,11 +18,11 @@ function AtencionMesas() {
 <div className="Mesas-total">Total:</div>
 <div className="Mesas-agregarPedido">Nuevo Item</div>
 <div className="Mesas-nuevaMesa">Nueva Mesa</div>
-<div className="Mesas-mas"><img src={botonMas} /></div>
+<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} /></div></Link>
 <div className="Mesas-logo"><img src={logo} /></div>
  </div>
  </div>
   );
 }
 
-export default AtencionMesas;
+

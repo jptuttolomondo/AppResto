@@ -4,6 +4,7 @@ import {Route,Routes} from 'react-router-dom'
 import {Landing} from'./components/landing.js'
 import { Home } from "./components/home.js";
 import {AtencionMesasPortada} from './components/atencionMesasPortada.js'
+import { AtencionMesas } from './components/atencionMesas.js';
 import {Cocina} from './components/cocina.js';
 import './App.css';
 
@@ -16,7 +17,8 @@ function App() {
         <Provider store= {store}>
          <Routes>
                 <Route  path="/" element={<Landing/>} > </Route>
-                <Route  path="/mesas" element={<AtencionMesasPortada/>} > </Route>
+                <Route  path="/mesas" element={<AtencionMesas/>} > </Route>
+                <Route  path="/mesasPortada" element={<AtencionMesasPortada/>} > </Route>
                 <Route exact path="/home" element={<Home/>} > </Route>
                 <Route exact path="/cocina" element={<Cocina/>} > </Route>
                 

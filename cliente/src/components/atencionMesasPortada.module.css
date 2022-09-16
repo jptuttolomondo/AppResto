@@ -5,18 +5,24 @@
     align-items: flex-end;
     text-align: center;
   }
+  .containerCard1{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+  }
   .containerCard {
-    display: flexbox;
+    display: flex;
     position:relative;
-    width: 177px;
+    /*width: 177px;
   height: 150px;
   left: 40px;
-  top: 200px;
+  top: 200px;*/
   flex-wrap: wrap;
     text-decoration: none;
     align-items: center;
 
     text-align: center;
+    /*
     color: rgb(196, 213, 228);
     border-color: rgb(32, 80, 0);
   
@@ -25,11 +31,12 @@
     border-width: 5px;
   
     background-color: rgb(18, 19, 18);
+    */
     padding: 0.5em;
   
     transition: transform 1s; 
   }
-  .containerCard:hover {  
+ /* .containerCard:hover {  
   
     transform:scale(3);
      transition: transform 1s; 
@@ -55,7 +62,7 @@
      transition: all 0.5s ease-out;
  
    }
-   
+   */
 
 .Body{position: relative;
     width: 1280px;
@@ -67,7 +74,7 @@
 background: linear-gradient(163.28deg, rgba(206, 225, 236, 0.96) 2.17%, rgba(219, 83, 255, 0.96) 96.14%);
 }
 .Encabezado{
-position: absolute;
+/*position: absolute;*/
 width: 1280px;
 height: 174px;
 left: 0px;

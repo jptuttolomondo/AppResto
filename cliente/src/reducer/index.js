@@ -1,15 +1,14 @@
 const initialState={
-    videogames:[],
+    products:[],
     detail:[],
-    copiaVideogames:[],
-    genres:[],
-    platforms:[]
+    copiaProducts:[],
+    user:[],
+    comanda:[]
     }
     function rootReducer(state=initialState,action){
     switch(action.type){
-     case 'GET_ALL_VIDEOGAMES':  return{...state,videogames:action.payload,copiaVideogames:action.payload}
-    
-      default:return state 
+     case 'GET_ALL_PRODUCTS':  return{...state,products:action.payload,copiaproducts:action.payload}
+          default:return state 
     }
     }
     

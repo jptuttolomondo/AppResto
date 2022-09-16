@@ -160,6 +160,16 @@
   
   background: #000000;
   }
+  .Mesas-mas-chico{
+    position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 8px;
+  top: 540px;
+  
+  background: #6a3232;
+  }
+
   .Mesas-total{
     position: absolute;
   width: 106px;
