@@ -13,7 +13,7 @@ export function Home() {
 <Link to ="/mesasPortada"><div className="landing-atencionMesas">Atención de Mesas</div></Link>
 <Link to ="/cocina"><div className="landing-cocina">Cocina</div></Link>
 <Link to ="/caja"><div className="landing-caja">Caja</div></Link>
-<div className="landing-logo"><img src={logo} /></div>
+<div className="landing-logo"><img src={logo} alt=''/></div>
 <Link to ="/quit"><div className="landing-salir">Salir</div></Link>
  </div>
  </div>

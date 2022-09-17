@@ -8,13 +8,13 @@ import Card from './card'
 
 
 
-import logo from '../assets/mesa de cafe grande.svg'
+//import logo from '../assets/mesa de cafe grande.svg'
 import foto from '../assets/denuncia extravio.jpeg'
 
 //import botonMas from'../assets/bxs-plus-circle 1.svg'
 import portada from './atencionMesasPortada.module.css'; 
 import './prueba.css'
-import {Link}from 'react-router-dom';    
+//import {Link}from 'react-router-dom';    
 export function AtencionMesasPortada() {
 const dispatch= useDispatch()
 

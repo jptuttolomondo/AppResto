@@ -18,8 +18,8 @@ export function AtencionMesas() {
 <div className="Mesas-total">Total:</div>
 <div className="Mesas-agregarPedido">Nuevo Item</div>
 <div className="Mesas-nuevaMesa">Nueva Mesa</div>
-<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} /></div></Link>
-<div className="Mesas-logo"><img src={logo} /></div>
+<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} alt='' /></div></Link>
+<div className="Mesas-logo"><img src={logo} alt='' /></div>
  </div>
  </div>
   );
