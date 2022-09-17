@@ -8,6 +8,7 @@ import {Cocina} from './components/cocina.js';
 import {Caja} from  './components/caja.js';
 import { Login } from './components/login.js';
 import {Quit} from  './components/quit.js';
+import { Zoom } from './components/zoom.js';
 import './App.css';
 import {store}from'./store/index'
 
@@ -24,6 +25,7 @@ function App() {
                 <Route exact path="/caja" element={<Caja/>} > </Route>
                 <Route exact path="/login" element={<Login/>} > </Route>
                 <Route exact path="/quit" element={<Quit/>} > </Route>
+                <Route exact path="/zoom" element={<Zoom/>} > </Route>
           </Routes>
     </Provider>
      </div>    

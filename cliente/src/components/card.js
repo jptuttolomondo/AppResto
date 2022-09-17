@@ -9,9 +9,10 @@ return(
        <div key={id} className={cardFormat.foodcards}title="Click para más detalles..">
          <div className={cardFormat.cardTitle}>{name}</div>
          <div className={cardFormat.cardData}>{description}</div>
-         <img src={image} alt='' width="70px" height="50px" />
          <div className={cardFormat.cardData}>$ {precio}<Link to="/mesas">
-         < img className ={cardFormat.botonChico} src={botonMas} alt='' width="20px" height="20px"/></Link>
+         <Link to="/zoom"> <img src={image}  title="Click para agrandar la foto.." alt='' width="70px" height="50px" /></Link>
+         < img className ={cardFormat.botonChico} src={botonMas}
+          alt='' width="20px" height="20px"/></Link>
          </div>
          
        </div> 

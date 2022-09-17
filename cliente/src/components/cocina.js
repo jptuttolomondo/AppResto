@@ -11,3 +11,5 @@ export function Cocina() {
  </div>
   );
 }
+//traer las comandas en estado tomado y modificado y mostra como listado, sin fotos
+//al terminar de preparar, boton finalizada y cambiar el estado a terminada
