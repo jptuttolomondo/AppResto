@@ -1,14 +1,14 @@
 import { Provider } from 'react-redux';
-
 import {Route,Routes} from 'react-router-dom'
 import {Landing} from'./components/landing.js'
 import { Home } from "./components/home.js";
 import {AtencionMesasPortada} from './components/atencionMesasPortada.js'
 import { AtencionMesas } from './components/atencionMesas.js';
 import {Cocina} from './components/cocina.js';
+import {Caja} from  './components/caja.js';
+import { Login } from './components/login.js';
+import {Quit} from  './components/quit.js';
 import './App.css';
-
-
 import {store}from'./store/index'
 
 function App() {
@@ -21,13 +21,12 @@ function App() {
                 <Route  path="/mesasPortada" element={<AtencionMesasPortada/>} > </Route>
                 <Route exact path="/home" element={<Home/>} > </Route>
                 <Route exact path="/cocina" element={<Cocina/>} > </Route>
-                
-      </Routes>
+                <Route exact path="/caja" element={<Caja/>} > </Route>
+                <Route exact path="/login" element={<Login/>} > </Route>
+                <Route exact path="/quit" element={<Quit/>} > </Route>
+          </Routes>
     </Provider>
      </div>    
      );
 } 
 export default App;
- 
-//
-/* <Route exact path="/home" element={<Home/>} > </Route>*/

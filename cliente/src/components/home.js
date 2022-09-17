@@ -9,12 +9,12 @@ export function Home() {
       <div className="landing-header">
       <div className="landing-titulo">Aplicación para<br></br> Restaurantes/Café</div>
       </div>
-<div className="landing-login">Login</div>
+      <Link to ="/login"><div className="landing-login">Login</div></Link>
 <Link to ="/mesasPortada"><div className="landing-atencionMesas">Atención de Mesas</div></Link>
-<div className="landing-cocina">Cocina</div>
-<div className="landing-caja">Caja</div>
-<div className="landing-salir">Salir</div>
+<Link to ="/cocina"><div className="landing-cocina">Cocina</div></Link>
+<Link to ="/caja"><div className="landing-caja">Caja</div></Link>
 <div className="landing-logo"><img src={logo} /></div>
+<Link to ="/quit"><div className="landing-salir">Salir</div></Link>
  </div>
  </div>
   );

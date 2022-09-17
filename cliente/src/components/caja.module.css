@@ -1,0 +1,237 @@
+.Mesas-body {
+    text-align: center;
+    position:relative;
+    width: 360px;
+    height: 640px;
+    /*overflow-x: scroll;*/
+    
+    background: linear-gradient(163.28deg, rgba(206, 225, 236, 0.96) 2.17%, rgba(219, 83, 255, 0.96) 96.14%);
+    border-radius: 24px;
+  }
+  .Mesas-titulo{
+    position: absolute;
+  left: -18.88%;
+  right: -18.37%;
+  top: 2%;
+  bottom: -340%;
+  
+  font-family: 'Comic Sans MS';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: 0.055em;
+  color: #000000;
+  display: block;
+  }
+  .Mesas-subtitulo{
+   
+  position: absolute;
+  width: 240px;
+  height: 42px;
+  left: 60px;
+  top: 104px;
+  
+  background: linear-gradient(92.33deg, #29BC1C 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+  border: 4px solid #107E1B;
+  border-radius: 23px;
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #000000;
+  
+  }
+  .Mesas-tablaItems{
+    
+  position: absolute;
+  width: 334px;
+  height: 345px;
+  left: 13px;
+  top: 188px;
+  
+  background: #E1FF2B;
+  border-radius: 23px;
+  }
+  
+  
+  .Mesas-fecha{
+    position: absolute;
+  width: 49px;
+  height: 22px;
+  left: 14px;
+  top: 160px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  
+  color: #000000;
+  
+  }
+  .Mesas-hora{
+    position: absolute;
+  width: 42px;
+  height: 22px;
+  left: 149px;
+  top: 160px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  
+  color: #000000;
+  }
+  .Mesas-mesa{
+    position: absolute;
+  width: 44px;
+  height: 22px;
+  right: 38px;
+  top: 160px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  
+  color: #000000;
+  }
+  .Mesas-agregarPedido{
+  
+    position: absolute;
+    width: 119px;
+    height: 28px;
+    left: 0px;
+    top: 602px;
+    
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #000000;
+  }
+  
+  .Mesas-nuevaMesa{
+    position: absolute;
+  
+    width: 109px;
+    height: 22px;
+    left: 100px;
+    top: 602px;
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  
+  color: #000000;
+  
+  }
+  .Mesas-logo{
+    position: absolute;
+    width: 58px;
+    height: 59px;
+    left: 112px;
+    top: 540px;
+  
+    
+  }
+  .Mesas-mas{
+    position: absolute;
+  width: 68px;
+  height: 61px;
+  left: 16px;
+  top: 540px;
+  
+  background: #000000;
+  }
+  .Mesas-mas-chico{
+    position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 8px;
+  top: 540px;
+  
+  background: #6a3232;
+  }
+
+  .Mesas-total{
+    position: absolute;
+  width: 106px;
+  height: 45px;
+  left: 169px;
+  top: 544px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 45px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #0A4605;
+  
+  }
+  .Mesas-atras{
+     position: absolute;
+width: 38px;
+height: 35px;
+left: 12px;
+top: 111px;
+
+background: #427C9D;
+  }
+ 
+  .Mesas-header {
+  
+  width: 360px;
+  height: 97px;
+  
+  background: conic-gradient(from 180deg at 50% 50%, #FF8A00 0deg, rgba(193, 64, 239, 0.96) 228.75deg, #FF8A00 360deg);
+  border-radius: 23px;
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  position:flex;
+  
+  }
+  
+  .Mesas-link {
+    color: #61dafb;
+  }
+  /* hace rotar la imagen del cafe
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  */
+  @media (prefers-reduced-motion: no-preference) {
+    .Mesas-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
