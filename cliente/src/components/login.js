@@ -1,5 +1,6 @@
 
-import logo from '../assets/undraw_conversation_re_c26v 1.png'
+import logo from '../assets/undraw_conversation_re_c26v.svg'
+
 import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import searchBarStyle from './login.module.css';
@@ -12,24 +13,35 @@ export function Login() {
       <div className="Mesas-titulo">Aplicación para <br></br> Restaurantes/Café</div>
       </div>
   <Link to="/home"><div className="Mesas-atras">Atras</div></Link>    
-<div className="Mesas-subtitulo">Login</div>
+<div className="Mesas-subtitulo">Usuarios</div>
 
 <div className={searchBarStyle.bloque}>
-    
 
-<input type='text'
-placeholder='Nombre de Usuario...'
+<div className={searchBarStyle.usuarioTexto}  >Usuario: </div>  
+
+<input className={searchBarStyle.inputLogin}
+ type='text'
+placeholder='Usuario..'
 />
-<input type='text'
+
+<div className={searchBarStyle.contraseñatexto}  >Contraseña: </div>  
+
+<input 
+className={searchBarStyle.inputPassword} 
+type='password'
+
 placeholder='Contraseña...'
+
 />
-<button type='submit' >Buscar</button>
+<button  className={searchBarStyle.botonLogin} 
+
+type='submit' >Login</button>
 
 </div>
 
 
-<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} alt=''/></div></Link>
-<div className="Mesas-logo"><img src={logo} alt=''/></div>
+
+<div ><img className={searchBarStyle.logoGrande}  src={logo} alt=''/></div>
  </div>
  </div>
   );
