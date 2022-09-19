@@ -68,14 +68,14 @@
         .containerCard:hover {  
   
             transform:scale(3);
-             transition: transform 1s; 
+             transition:  1s;
              position: center;
              align-self: auto;
              
              width: 10rem;
              height: 10rem;
-             margin-left: auto;
-             margin-right: auto;
+             margin-left: 0px;
+             margin-right: 0px;
         
              
            
