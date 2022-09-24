@@ -31,3 +31,12 @@ text-align: center;
 
 color: #000000;
 }
+
+.Mesas-tablaItems-Cocina{
+        position: relative;
+    width: 1196px;
+    height: 371px;
+    top: 214px;
+    background: #E1FF2B;
+    border-radius: 23px;
+    }

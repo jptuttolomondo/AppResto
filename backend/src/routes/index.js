@@ -95,10 +95,44 @@ async function deleteUser(name){
   else res.send('el usuario no existe')
    })
 //----------------------------------------------------------------comandas
-const getComandas = async () => {
-  return await Comanda.findAll({
+const getComandas = async () => { 
+
+  let comandasCompleta= await Comanda.findAll({
+include:{
+  model: Producto,
+througth: {attributes: ['productname','description','userIdUser'],},
+},
 });
+
+async function usuario1 (idusuario){ 
+    let q= await User.findByPk(idusuario)
+return q.nombre
+} 
+let salida=[]
+await Promise.all(
+  comandasCompleta.map(async e=>{
+    let z= {
+    id:e.id,
+    mesa:e.mesa,
+    fecha:e.createdAt.toLocaleDateString(),
+    hora:e.createdAt.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
+    total:e.total,
+    productos:e.productos.map(elem=>{
+      let prod={
+        prodNombre: elem.productName,
+        precio:elem.precio
+      }
+     return prod
+    }),
+    usuario :await usuario1(e.userIdUser) 
+  }
+  return salida.push(z)
+})
+)
+return salida
 };
+
+
 
 router.get("/comandas", async (req, res) => {
   const infoTotal = await getComandas();
