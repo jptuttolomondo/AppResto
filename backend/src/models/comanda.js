@@ -8,7 +8,7 @@ module.exports=(sequelize)=>{
         primaryKey:true
       },
    
-mesa:{type:DataTypes.ENUM('A','B','C','D','E','F','G','H','I','J','K','L','M','N'),allowNull:false },
+
 estado:{type:DataTypes.ENUM('PENDIENTE','TOMADO',
 'EN ESPERA','PREPARANDO','LISTO PARA SERVIR',
 'SERVIDO','MODIFICADO','COBRADO')
