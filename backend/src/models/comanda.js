@@ -8,13 +8,15 @@ module.exports=(sequelize)=>{
         primaryKey:true
       },
    
-
-estado:{type:DataTypes.ENUM('PENDIENTE','TOMADO',
-'EN ESPERA','PREPARANDO','LISTO PARA SERVIR',
-'SERVIDO','MODIFICADO','COBRADO')
-,allowNull:false},
+      estado:{type:DataTypes.ENUM('PENDIENTE','COBRADO','PREPARANDO','SERVIDO','TOMADO','MODIFICADO','LISTO PARA SERVIR'),allowNull:false },
+// estado:{type:DataTypes.ENUM('PENDIENTE','TOMADO',
+// 'EN ESPERA','PREPARANDO','LISTO PARA SERVIR',
+// 'SERVIDO','MODIFICADO','COBRADO')
+// ,allowNull:false},
 total:{type:DataTypes.INTEGER,allowNull:false},
-tipoDePago:{type:DataTypes.ENUM('EFECTIVO','TARJETA DE CREDITO/DEBITO','TRANFERENCIA'),allowNull:false }
-     },{timeStamps:true,allowNull:false}
+tipoDePago:{type:DataTypes.ENUM('EFECTIVO','TARJETA','TRANFERENCIA'),allowNull:false }
+     }
    )
 }
+
+

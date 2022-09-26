@@ -1,8 +1,64 @@
 require("dotenv").config();
 const { Router} = require("express");
-//const axios = require("axios");
-const {Producto,User,Comanda} = require("../db");
 const router = Router();
+const {Producto,User,Comanda,Mesa,Item} = require("../db");
+
+
+////////////////////////////////  //////////////////////////////////////////////////
+
+
+
+
+ const products = require("./controllers/producto");
+// const product = require("./product");
+// const categories = require("./categories");
+// const customer = require("./customer");
+// const payment = require("./payment");
+// const page404 = require("./404");
+
+// const nodeMailer = require("./mailer");
+// const orderById = require("./order");
+// const ordersGet = require("./orders");
+// const cart = require("./cart");
+// const comment = require("./comment");
+// const commentUser = require("./commentUser");
+// const comments = require("./comments");
+// const carrito = require("./cart");
+
+// router.use("/products", products);
+// router.use("/categories", categories);
+// router.use("/product", product);
+// router.use("/customer", customer);
+// router.use("/payment", payment);
+// router.use("/mailer", nodeMailer);
+// router.use("/orders", ordersGet);
+// router.use("/order", orderById);
+// router.use("/cart", cart);
+// router.use("/comments", comments);
+// router.use("/comment", comment);
+// router.use("/commentUser", commentUser);
+// router.use("/cart", carrito);
+
+//------------------------todas las rutas antes del *!!!!!!!!!!
+//router.use("*", page404);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+
 //-------------------------------------------------------products
 const getProducts = async () => {
   return await Producto.findAll({
@@ -63,19 +119,16 @@ router.get("/users", async (req, res) => {
    } 
 )
 
-router.post("/users", async (req, res) => {
+router.post("/user", async (req, res) => {
 let { user_profile,nombre}=req.body
-await User.findAll({
-  where: {nombre:nombre},
-})
 let [registro,created]=await User.findOrCreate({
     where: {nombre: nombre,
-    user_profile,
+    user_profile, 
    }
   });
 if(created===false) res.send('el usuario ya existe');
 else res.send("Usuario creado correctamente");
-})
+}) 
 
 async function deleteUser(name){
   await User.destroy({
@@ -95,36 +148,63 @@ async function deleteUser(name){
   else res.send('el usuario no existe')
    })
 //----------------------------------------------------------------comandas
-const getComandas = async () => { 
 
-  let comandasCompleta= await Comanda.findAll({
+async function usuario1 (idusuario){ 
+    let q= await User.findByPk(idusuario)
+return q.nombre
+}
+
+async function precioProd(idProducto){
+  let q= await Producto.findByPk(idProducto)
+  return q.precio
+}
+async function precioNom(idProducto){
+  let q= await Producto.findByPk(idProducto)
+  return q.productName
+}
+
+
+async function mesa1  (idmesa){
+  let q= await Mesa.findByPk(idmesa)
+  return q.mesa  
+}
+async function getItem(idComanda){
+  let q= await Item.findAll({
+    where: {comandaId:idComanda},
+  }) 
+   let salida1= await Promise.all(await q.map(async saleq=>{ 
+      let salidaItem={
+    cantidad: saleq.cantidad ,
+    totalParcial:saleq.totalParcial,
+    productoNombre:await precioNom(saleq.productoId),
+    precio:await precioProd(saleq.productoId),
+    }
+  return  salidaItem
+  })
+   )
+return salida1
+ } 
+
+const getComandas = async () => { 
+let comandasCompleta= await Comanda.findAll({
 include:{
   model: Producto,
 througth: {attributes: ['productname','description','userIdUser'],},
 },
 });
-
-async function usuario1 (idusuario){ 
-    let q= await User.findByPk(idusuario)
-return q.nombre
-} 
 let salida=[]
 await Promise.all(
-  comandasCompleta.map(async e=>{
+    comandasCompleta.map(async e=>{
     let z= {
-    id:e.id,
-    mesa:e.mesa,
+    usuario :await usuario1(e.userIdUser), 
+    id_comanda:e.id,
+    mesa:await mesa1(e.mesaIdMesa),
     fecha:e.createdAt.toLocaleDateString(),
-    hora:e.createdAt.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
+    hora:e.createdAt.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}), 
+    estado:e.estado,
+    tipoDePago:e.tipoDePago,
     total:e.total,
-    productos:e.productos.map(elem=>{
-      let prod={
-        prodNombre: elem.productName,
-        precio:elem.precio
-      }
-     return prod
-    }),
-    usuario :await usuario1(e.userIdUser) 
+    items:await getItem(e.id),
   }
   return salida.push(z)
 })
@@ -133,34 +213,41 @@ return salida
 };
 
 
-
 router.get("/comandas", async (req, res) => {
   const infoTotal = await getComandas();
-     res.status(200).send(infoTotal);
+     res.status(200).json(infoTotal);
    } 
 )
 
-router.post("/comanda", async (req, res) => {
-let {mesa,estado,total,tipoDePago,userIdUser,pedido}=req.body
-await Comanda.findAll({
-  where: {mesa:mesa,estado:estado},
-})
-let [registro,created]=await Comanda.findOrCreate({
-    where: {mesa:mesa,
-    estado:estado,
-    total:total,
-    tipoDePago:tipoDePago,
-    userIdUser:userIdUser
-   }
-  });
-if(created===false) res.send('La comanda ya existe');
-else {
-  for (let i=0; i<pedido.length; i++){
-  let productodb=await Producto.findAll({ where: {productName:pedido[i]}})
-  registro.addProducto(productodb)
-    }
-  res.send("Comanda creada correctamente");
+
+router.post("/comanda", async (req, res) => {  
+let {mesa,estado,total,tipoDePago,usuario,items}=req.body
+let getuser=await User.findOne({   where: {nombre:usuario}, }) 
+let getmesa=await Mesa.findOne({   where:{mesa:mesa} })
+const [registro,created]= await Comanda.findOrCreate({
+where:{
+  estado:estado,
+      total:total,  
+      tipoDePago:tipoDePago,   
+        mesaIdMesa:getmesa.id_mesa,
+     userIdUser:getuser.id_user
 }
+});
+await Promise.all(items.map(async elemitem=>{
+let productoId=    await  Producto.findOne({ where: {productName: elemitem.productoNombre}})
+let [regItem,regItemCreated]=  await Item.findOrCreate({
+where:{
+cantidad:elemitem.cantidad,
+totalParcial:elemitem.totalParcial, 
+comandaId:registro.id,
+productoId:productoId.id,
+}
+})
+}))
+
+if(created===false) res.send('el comanda ya existe');
+else res.send("comada creado correctamente");
+
 })
 
 async function deleteComanda(id){
@@ -181,106 +268,10 @@ async function deleteComanda(id){
   else res.send('La comanda no existe')
    })
 //-------------------------------------------------------
+//item---------------------------------------------------
+
+
+
 module.exports = router;
 
 
-
-
-
-
-//-------------------------------------------------------
-
-// router.get("/videogame/:id", async (req, res) => {
-  
-//   let id = req.params.id;
-//   let videosTotal;
-//   console.log(id)
-//   try{
-
-//    if(id.includes('-')===false){
-  
-//       const apiUrl = await axios.get(
-//         `https://api.rawg.io/api/games/${id}?key=${APIKEY}`
-//       );
-     
-//       let array = [];
-//       let e = {
-//         id: apiUrl.data.id,
-//         name: apiUrl.data.name,
-//         released: apiUrl.data.released,
-//         background_image: apiUrl.data.background_image,
-//         rating: apiUrl.data.rating,
-//         platforms: apiUrl.data.parent_platforms.map((e) => e.platform.name),
-//         genres: apiUrl.data.genres?.map((e) => e.name),
-//         description: apiUrl.data.description,
-//       };
-//       array.push(e);
-    
-
-//     videosTotal = array
-//   console.log(videosTotal)
-//    }
-//  else{ let fromDb=await getDbInfo()
-//         videosTotal=fromDb.filter(elem=>elem.id===id)
-
-// }
-
-
-// videosTotal.length? res.status(200).json(videosTotal)
-//                      : res.status(404).send("videogame no encontrado");
-// }   
-// catch(error){
-//   res.status(404).send(console.log("videogame no encontrado al fiunañl"))
-// }       
-// });
-//-------------------------------------------------------
-
-
-//------------------------------------------------------
-// const getApiInfo = async () => {
-//   let promises = [];
-//   let allGames = [];
-//   try {
-//     let url = `https://api.rawg.io/api/games?key=${APIKEY}`;
-//     for (let i = 0; i < 5; i++) {
-//       let apiVideo = await axios.get(url).then((response) => {
-//         return response;
-//       });
-//       promises = promises.concat(apiVideo);
-//       url = apiVideo.data.next;
-//     }
-
-//     await Promise.all(promises).then((response) => {
-//       for (let i = 0; i < promises.length; i++) {
-//         allGames = allGames.concat(
-//           response[i].data.results.map((el) => {
-//             return {
-//               id: el.id,
-//               name: el.name,
-//               released: el.released,
-//               genres: el.genres.map((e) => {
-//                 return { name: e.name };
-//               }),
-//               platforms: el.platforms.map((e) => {
-//                 return { name: e.platform.name };
-//               }),
-//               rating: el.rating,
-//               background_image: el.background_image,
-//             };
-//           })
-//         );
-//       }
-//     });
-
-//     return allGames;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-//-------------------------------------------------------
-// const getDbInfo = async () => {
-//   return await Producto.findAll({
-  
-//   });
-// }; 
-//-------------------------------------------------------
