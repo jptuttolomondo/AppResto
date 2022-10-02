@@ -12,35 +12,45 @@ module.exports = {
       let { mesa, estado, total, tipoDePago, usuario, items } = req.body;
       let getuser = await User.findOne({ where: { nombre: usuario } });
       let getmesa = await Mesa.findOne({ where: { mesa: mesa } });
-      const [registro, created] = await Comanda.findOrCreate({
-        where: {
+
+      //no podemos saber si una comanda exactamente igual a otra fue creada por error o no
+      //eso hay que controlarlo en front. Pruede haber 2 comandas exactamente iguales y ser legales las dos
+//entonces es create directamente
+    const registro = await Comanda.create({
+        
           estado: estado,
           total: total,
           tipoDePago: tipoDePago,
           mesaIdMesa: getmesa.id_mesa,
           userIdUser: getuser.id_user,
-        },
+          
+        
       });
+      console.log(registro)
       await Promise.all(
         items.map(async (elemitem) => {
           let productoId = await Producto.findOne({
             where: { productName: elemitem.productoNombre },
           });
-          let [regItem, regItemCreated] = await Item.findOrCreate({
-            where: {
+          let regItem = await Item.create({
+      
               cantidad: elemitem.cantidad,
               totalParcial: elemitem.totalParcial,
               comandaId: registro.id,
               productoId: productoId.id,
-            },
+          
           });
         })
       );
-      if (created === false) res.send("el comanda ya existe");
-      else res.send("Comanda creada correctamente");
+
+      
+     //  if (created === false) res.status(200).send("el comanda ya existe");
+      // else
+      
+      res.status(200).send("Comanda creada correctamente");
     } catch (error) {
-      res.send(error);
-      console.log("Fail database connection");
+      res.status(400).send(error);
+ 
     }
   },
 

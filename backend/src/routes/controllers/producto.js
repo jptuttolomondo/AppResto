@@ -1,4 +1,4 @@
-const { Producto } = require("../../db");
+const { Producto,Category } = require("../../db");
 require("dotenv").config;
 const { getProducts, deleteProduct } = require("../helpers/producto");
 module.exports = {
@@ -10,25 +10,27 @@ module.exports = {
   async post(req, res) {
     try {
       let { productName, category, description, image, precio } = req.body;
+      let categoria=await Category.findOne({
+        where:{category_name: category}
+      })
+      console.log(categoria.id_category)
       await Producto.findAll({
         where: { productName: productName },
       });
       let [registro, created] = await Producto.findOrCreate({
         where: {
-          productName: req.body.productName,
-          productName,
-          description,
-          category,
-          image,
-          precio,
+          productName:productName,
+          description:description,
+          categoryIdCategory:categoria.id_category,
+          image:image,
+          precio:precio,
         },
       });
-      if (created === false) res.send("el producto ya existe");
-      else res.send("Producto creado correctamente");
-    } catch (error) {
-      res.send(error);
-      console.log("Fail database connection");
-    }
+      if (created === false) res.status(200).send("El producto ya existe");
+      else res.status(200).send("Producto creado corerctamente");
+    } catch  { res.status(400).send("Fail database connection");}
+     
+    
   },
 
   async delete(req, res) {
