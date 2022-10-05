@@ -1,0 +1,114 @@
+
+
+<div id={"tab"+1} className="tab"> 
+      <a href={"#tab"+1} >{Allcategories[0]}</a>
+      <div className="tab-content">
+   
+        { 
+                    Allproductos?.map(e=>{
+                        return(
+                       <div className={portada.cards} key={e.id} >
+                     
+                         <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+                 </div>  
+                 
+                     )
+                     })
+            }
+       </div>
+</div>
+
+    <div id={"tab"+2} className="tab"> 
+      <a href={"#tab"+2}>{Allcategories[1]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[1]}</h2>
+    
+        </div>
+        </div>
+
+        <div id={"tab"+3} className="tab"> 
+      <a href={"#tab"+3}>{Allcategories[2]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[2]}</h2>
+     
+        </div>
+        </div>
+
+        <div id={"tab"+4} className="tab"> 
+      <a href={"#tab"+4}>{Allcategories[3]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[3]}</h2>
+     
+        </div>
+        </div>   
+
+        <div id={"tab"+5} className="tab"> 
+      <a href={"#tab"+5}>{Allcategories[4]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[4]}</h2>
+     
+        </div>
+        </div>  
+
+        <div id={"tab"+6} className="tab"> 
+      <a href={"#tab"+6}>{Allcategories[5]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[5]}</h2>
+     
+        </div>
+        </div> 
+
+        <div id={"tab"+7} className="tab"> 
+      <a href={"#tab"+7}>{Allcategories[6]}</a>
+      <div className="tab-content">
+        <h2>{Allcategories[6]}</h2>
+     
+        </div>
+        </div> 
+
+
+
+
+
+
+
+
+  index!=0?
+ <div id={"tab"+index} className="tab" key={index}> 
+      <a href={"#tab"+index} >{Allcategories[index]}</a>
+      <div className="tab-content" key={index}>
+ 
+      { /*
+                    Allproductos?.
+                      map(e=>{
+                        return(   
+                       <div className={portada.cards} key={e.id}  >
+                  
+              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+         
+               </div>  
+                
+                     )
+                     })
+                    */}
+       </div>
+</div>
+: <div key={index}></div>
+
+)
+
+})
+ 
+}
+   
+
+
+   </div>
+        
+
+
+ </div>
+
+      </div>
+    </div>
+       

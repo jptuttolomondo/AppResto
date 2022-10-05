@@ -12,3 +12,9 @@ export function getMozo(name){
            return dispatch({type: 'GET_USER_BY_NAME', payload:response.data})
     }
     }
+export function getAllcategories() {
+    return async function (dispatch) {
+        var response=await axios.get('http://localhost:3001/categories')
+        return dispatch({type: 'GET_ALL_CATEGORIES',payload: response.data})
+    }
+}

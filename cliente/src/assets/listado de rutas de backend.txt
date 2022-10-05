@@ -1,0 +1,26 @@
+usuarios:
+get: http://localhost:3001/users
+post: http://localhost:3001/users  //por body
+delete: http://localhost:3001/users/${userName}  //por params
+
+comandas:
+get: http://localhost:3001/comandas 
+post:http://localhost:3001/comandas     //por body
+put:
+delete:http://localhost:3001/${comandas} //por params
+
+items:
+get:
+post:
+put:
+delete:
+
+categorias: 
+get:http://localhost:3001/categories
+post: http://localhost:3001/categories  //por body
+delete:http://localhost:3001/categories/${categoryName} //por params  
+
+productos:
+get:http://localhost:3001/products
+post: http://localhost:3001/products    //por body
+delete:http://localhost:3001/products/${productName}   //por params
