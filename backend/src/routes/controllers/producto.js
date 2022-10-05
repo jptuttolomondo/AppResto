@@ -4,6 +4,7 @@ const { getProducts, deleteProduct } = require("../helpers/producto");
 module.exports = {
   async get(req, res) {
     const infoTotal = await getProducts();
+    
     res.status(200).send(infoTotal);
   },
 
