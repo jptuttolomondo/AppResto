@@ -1,9 +1,18 @@
 const { Producto, Mesa, User, Item, Comanda } = require("../../db");
 require("dotenv").config;
-const { getComandas, deleteComanda } = require("../helpers/comanda");
+const { getComandas, deleteComanda,getItem,mesa1,usuario1 } = require("../helpers/comanda");
 module.exports = {
   async get(req, res) {
-    const infoTotal = await getComandas();
+    let idComanda=req.params;
+    let infoTotal;
+    console.log(idComanda);
+    if(!idComanda){
+     infoTotal = await getComandas();
+
+    } else{
+       infoTotal= await getComandas(idComanda)
+
+    }
     res.status(200).json(infoTotal);
   },
 
@@ -53,7 +62,45 @@ module.exports = {
  
     }
   },
+async getComandaPorId(req, res){
+  try {
+    let id = req.params.id;
+    console.log(id)
 
+    let comandaPorId = await Comanda.findByPk(id,{
+  include: {
+          model: Producto,
+          througth: { attributes: ["productname", "description", "userIdUser"] },
+        }
+    });
+    console.log(comandaPorId)
+    if (comandaPorId) {
+     
+      console.log('comandaPorId!!!!!!!!!!!!!!!!:',comandaPorId)
+      let salida = {
+        usuario: await usuario1(comandaPorId.userIdUser),
+        id_comanda: comandaPorId.id,
+        mesa: await mesa1(comandaPorId.mesaIdMesa),
+        fecha: comandaPorId.createdAt.toLocaleDateString(),
+        hora: comandaPorId.createdAt.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        estado: comandaPorId.estado,
+        tipoDePago: comandaPorId.tipoDePago,
+        total: comandaPorId.total,
+        items:   await getItem(comandaPorId.id),
+      }
+
+
+      
+      res.status(200).send(salida);
+    } else res.send("La comanda no existe");
+  } catch (error) {
+    res.send(error);
+    console.log("Fail database connection");
+  }
+},
   async delete(req, res) {
     try {
       let id = req.params.id;

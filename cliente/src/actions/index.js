@@ -18,3 +18,17 @@ export function getAllcategories() {
         return dispatch({type: 'GET_ALL_CATEGORIES',payload: response.data})
     }
 }
+    export function getAllMesas() {
+        return async function (dispatch) {
+            var response=await axios.get('http://localhost:3001/mesas')
+            return dispatch({type: 'GET_ALL_MESAS',payload: response.data})
+        }
+        
+    }
+    
+    export function getComandaId(id) {
+        return async function (dispatch) {
+            var response=await axios.get(`http://localhost:3001/comandas/${id}`)
+            return dispatch({type: 'GET_COMANDA_ID',payload: response.data})
+        }
+    }

@@ -37,14 +37,20 @@ const getItem = async (idComanda) => {
   return salida1;
 };
 
-const getComandas = async () => {
+const getComandas = async (idComanda) => {
+  let {aux}=idComanda
+  console.log('idComanda:',idComanda)
+  console.log(aux)
+  let salida = [];
+  if(aux===undefined){
+    console.log('hola1')
   let comandasCompleta = await Comanda.findAll({
     include: {
       model: Producto,
       througth: { attributes: ["productname", "description", "userIdUser"] },
     },
   });
-  let salida = [];
+
   await Promise.all(
     comandasCompleta.map(async (e) => {
       let z = {
@@ -61,9 +67,41 @@ const getComandas = async () => {
         total: e.total,
         items: await getItem(e.id),
       };
+      console.log('hola2')
       return salida.push(z);
+
     })
   );
+  }else{
+    let comandaPorId = await Comanda.findByPk(idComanda
+ 
+      // include: {
+      //   model: Producto,
+      //   througth: { attributes: ["productname", "description", "userIdUser"] },
+      // },
+   
+    );
+    console.log('comandaPorId!!!!!!!!!!!!!!!!:',comandaPorId)
+    // let y = {
+    //   usuario: await usuario1(comandaPorId.userIdUser),
+    //   id_comanda: comandaPorId.id,
+    //   mesa: await mesa1(comandaPorId.mesaIdMesa),
+    //   fecha: comandaPorId.createdAt.toLocaleDateString(),
+    //   hora: comandaPorId.createdAt.toLocaleTimeString([], {
+    //     hour: "2-digit",
+    //     minute: "2-digit",
+    //   }),
+    //   estado: comandaPorId.estado,
+    //   tipoDePago: comandaPorId.tipoDePago,
+    //   total: comandaPorId.total,
+    //   items:   await Promise.all(await getItem(comandaPorId.id)),
+    // };
+    return salida.push('sale11111');
+
+
+  }
+
+  console.log('salida:',salida)
   return salida;
 };
 
@@ -77,4 +115,6 @@ const deleteComanda = async (id) => {
   });
 };
 
-module.exports = { getComandas: getComandas, deleteComanda: deleteComanda };
+module.exports = { getComandas: getComandas, 
+  deleteComanda: deleteComanda,getItem: getItem,
+  mesa1: mesa1,usuario1: usuario1};

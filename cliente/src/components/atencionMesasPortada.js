@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "./card";
 import foto from "../assets/denuncia extravio.jpeg";
 import portada from "./atencionMesasPortada.module.css";
+import {Link} from 'react-router-dom'
 import "./solapas.css";
 //import "./prueba.css";
 
@@ -19,6 +20,7 @@ let idIndex = 0;
   useEffect(() => {
     dispatch(getAllProducts());
     dispatch(getAllcategories());
+
   }, [dispatch]);
 
   return (
@@ -166,6 +168,9 @@ let idIndex = 0;
   </div>
 </div>
 </div>
+
+<Link to="/mesas"><button className= {portada.botonNuevaComanda}>Nueva Comanda</button></Link>
+<button className= {portada.botonNuevoItem}>Agregar Item a la mesa</button>
 </div>
   )
 }

@@ -250,5 +250,62 @@ top: 217px;
     -o-transition: all 3s ease-out;
     transition: all 3s ease-out;
   }
-  
+  .botonNuevaComanda{
+   
+position: absolute;
+width: 240px;
+height: 62px;
+left:1270px;
+top: 175px;
+    background: linear-gradient(92.33deg, #29BC1C 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+    border: 4px solid #107E1B;
+    border-radius: 23px;
+    
+    
+    /* Subtitulo */
+    
+    
+    
+    
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #000000;
 
+  }
+  .botonNuevoItem{
+   
+    position: absolute;
+    width: 278px;
+    height: 60px;
+    left: 993px;
+    top: 616px;
+        background: linear-gradient(92.33deg, #29BC1C 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+        border: 4px solid #107E1B;
+        border-radius: 23px;
+        
+        
+        /* Subtitulo */
+        
+        
+        
+        
+        font-family: 'Comic Sans MS';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #000000;
+    
+      }
+    

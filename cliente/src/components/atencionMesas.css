@@ -58,6 +58,7 @@
   
   background: #E1FF2B;
   border-radius: 23px;
+
   }
   
   
@@ -65,13 +66,13 @@
     position: absolute;
   width: 49px;
   height: 22px;
-  left: 14px;
+  left: 11px;
   top: 160px;
   
   font-family: 'Comic Sans MS';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   
   color: #000000;
@@ -81,28 +82,28 @@
     position: absolute;
   width: 42px;
   height: 22px;
-  left: 149px;
+  left: 155px;
   top: 160px;
   
   font-family: 'Comic Sans MS';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   
   color: #000000;
   }
   .Mesas-mesa{
     position: absolute;
-  width: 44px;
+  width: 98px;
   height: 22px;
-  right: 38px;
+  right:14px;
   top: 160px;
   
   font-family: 'Comic Sans MS';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   
   color: #000000;
@@ -151,6 +152,8 @@
   
     
   }
+
+
   .Mesas-mas{
     position: absolute;
   width: 68px;
@@ -169,7 +172,14 @@
   
   background: #6a3232;
   }
-
+.box{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 8px;
+  top: 540px;
+  
+}
   .Mesas-total{
     position: absolute;
   width: 106px;
@@ -199,6 +209,73 @@ top: 111px;
 background: #427C9D;
   }
  
+.encabezadoItems{
+  position: absolute;
+  width: 335px;
+  height: 29px;
+  left: 14px;
+  top: 186px;
+  
+  background: #E1DD7E;
+  border-radius: 10px;
+  
+}
+.producto{
+  
+position: absolute;
+width: 42px;
+height: 14px;
+left: 165px;
+top: 193px;
+
+font-family: 'Comic Sans MS';
+font-style: italic;
+font-weight: 700;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+.precioUnitario{
+  position: absolute;
+width: 72px;
+height: 14px;
+left: 271px;
+top: 193px;
+
+font-family: 'Comic Sans MS';
+font-style: italic;
+font-weight: 700;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+.cantidad{
+  position: absolute;
+width: 42px;
+height: 14px;
+left: 22px;
+top: 193px;
+
+font-family: 'Comic Sans MS';
+font-style: italic;
+font-weight: 700;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
   .Mesas-header {
   
   width: 360px;
