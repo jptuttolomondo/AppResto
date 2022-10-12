@@ -257,6 +257,106 @@ text-align: center;
 
 color: #000000;
 }
+.items{
+  position: relative;
+  width: 42px;
+  height: 30px;
+  left: 22px;
+  top: 132px;
+  
+  font-family: 'Comic Sans MS';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.filaItem1{
+  display:table-cell;
+  flex-direction : row;
+
+    width:40px;
+    padding-right: 8rem;
+}
+
+.filaItem2{
+  display:table-cell;
+  flex-direction : row;
+
+    width:40px;
+    padding-right: 6rem;
+
+
+
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px 8px;
+gap: 16px;
+
+position: absolute;
+left: 16.81%;
+right: 13.86%;
+top: 28.57%;
+bottom: 57.14%;
+
+background: #CBACAC;
+box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.filaItem3{
+  display:table-cell;
+  flex-direction : row;
+
+    width:40px;
+
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px 8px;
+gap: 16px;
+
+width: 47px;
+height: 34px;
+
+background: #CBACAC;
+box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+}
+.columnaCantidad{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+left: 0%;
+right: 83.48%;
+top: 0%;
+bottom: 0%;
+
+filter: drop-shadow(-1px 0px 0px rgba(0, 0, 0, 0.25));
+}
+.columnaTotal{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+left: 86.14%;
+right: 0%;
+top: 0%;
+bottom: 14.29%;
+
+filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.25));
+}
 .cantidad{
   position: absolute;
 width: 42px;

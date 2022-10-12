@@ -6,16 +6,25 @@ import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import {Link} from 'react-router-dom'
 export function AtencionMesas() {
+  const dispatch=useDispatch()
 let fecha =new Date()
 const mesas= useSelector((state)=>state.mesas)
 const comandas=useSelector((state)=>state.comanda)
 console.log(mesas)
-const dispatch=useDispatch()
+let aux=[]
+aux=comandas.items
+
+
+  
+
+//let muestraComanda=comandas.items
+
+//console.log('muestracomanda:',muestraComanda)
 console.log(fecha)
-console.log(comandas)
+
 useEffect(()=>{
 dispatch(getAllMesas())
-dispatch(getComandaId("120cc6a3-8bca-47c5-b67b-a80913dd35d1"))
+dispatch(getComandaId("38786180-81ec-4951-872d-adbeaa35a340"))
 },[dispatch])
 
   return (
@@ -45,20 +54,16 @@ dispatch(getComandaId("120cc6a3-8bca-47c5-b67b-a80913dd35d1"))
 <div className="cantidad">Cantidad</div>
 <div className="producto">Producto</div>
 <div className="precioUnitario">P.Unit</div>
-<div>{comandas.items.map(e=>{
-  return (
-  <div >
-  <div>{e.cantidad}</div>
-  <div>{e.productoNombre}</div>
-  <div>{e.totalParcial}</div>
-  <div>{e.Precio}</div>
 
-    </div>
-  )}
-  )}
-</div>
-
-
+<div className="items" key="cantidad">{comandas.items?.map(e=>{
+  return(
+<div >
+      <div class='filaItem1'>{e.cantidad}</div>
+      <div className='filaItem2'>{e.productoNombre}</div> 
+      <div className='filaItem3'>{e.totalParcial} </div>
+   </div>
+  ) 
+})}</div>
 
 
 

@@ -18,40 +18,57 @@ module.exports = {
 
   async post(req, res) {
     try {
-      let { mesa, estado, total, tipoDePago, usuario, items } = req.body;
+      let { mesa, estado,  tipoDePago, usuario, items } = req.body;
       let getuser = await User.findOne({ where: { nombre: usuario } });
       let getmesa = await Mesa.findOne({ where: { mesa: mesa } });
+      
 
       //no podemos saber si una comanda exactamente igual a otra fue creada por error o no
       //eso hay que controlarlo en front. Pruede haber 2 comandas exactamente iguales y ser legales las dos
 //entonces es create directamente
-    const registro = await Comanda.create({
+
+     console.log('hola1')   
+      const registro = await Comanda.create({
         
           estado: estado,
-          total: total,
+          total: 0,
           tipoDePago: tipoDePago,
           mesaIdMesa: getmesa.id_mesa,
           userIdUser: getuser.id_user,
-          
-        
-      });
-      console.log(registro)
+            })
+            //console.log('registro:',registro)
+            let suma=0
       await Promise.all(
         items.map(async (elemitem) => {
           let productoId = await Producto.findOne({
             where: { productName: elemitem.productoNombre },
           });
+      //     console.log('precio:',productoId.precio)
+      //  let TotalParcial1=elemitem.cantidad*productoId.precio
+      //     console.log('parcial:',TotalParcial1)
+        
           let regItem = await Item.create({
       
               cantidad: elemitem.cantidad,
-              totalParcial: elemitem.totalParcial,
+              totalParcial:elemitem.cantidad*productoId.precio,
               comandaId: registro.id,
               productoId: productoId.id,
           
           });
-        })
-      );
 
+         console.log('regitems:',regItem)
+      
+         suma=suma+ regItem.totalParcial
+          
+      console.log('suma:',suma)
+    //   );
+          
+          await Comanda.update({total:suma},
+            {
+            where:{id:registro.id} ,
+          })
+        
+       }));
       
      //  if (created === false) res.status(200).send("el comanda ya existe");
       // else
@@ -65,7 +82,7 @@ module.exports = {
 async getComandaPorId(req, res){
   try {
     let id = req.params.id;
-    console.log(id)
+   
 
     let comandaPorId = await Comanda.findByPk(id,{
   include: {
@@ -73,10 +90,10 @@ async getComandaPorId(req, res){
           througth: { attributes: ["productname", "description", "userIdUser"] },
         }
     });
-    console.log(comandaPorId)
+
     if (comandaPorId) {
      
-      console.log('comandaPorId!!!!!!!!!!!!!!!!:',comandaPorId)
+    
       let salida = {
         usuario: await usuario1(comandaPorId.userIdUser),
         id_comanda: comandaPorId.id,
@@ -92,7 +109,7 @@ async getComandaPorId(req, res){
         items:   await getItem(comandaPorId.id),
       }
 
-
+console.log(salida.items[0].cantidad)
       
       res.status(200).send(salida);
     } else res.send("La comanda no existe");
