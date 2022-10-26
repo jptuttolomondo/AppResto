@@ -1,5 +1,3 @@
-import logo from '../assets/undraw_conversation_re_c26v 1.png'
-import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import {Link} from 'react-router-dom'
 export function Caja() {
@@ -18,8 +16,8 @@ export function Caja() {
 <div className="Mesas-total">Total:</div>
 <div className="Mesas-agregarPedido">Nuevo Item</div>
 <div className="Mesas-nuevaMesa">Nueva Mesa</div>
-<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} alt='' /></div></Link>
-<div className="Mesas-logo"><img src={logo} alt=''/></div>
+<Link to ="/mesasPortada"><div className="Mesas-mas"><img src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666824874/appresto/bxs-plus-circle_1_edfipo.svg" alt='' /></div></Link>
+<div className="Mesas-logo"><img src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666824693/appresto/undraw_conversation_re_c26v_1_qbzozn.png" alt=''/></div>
  </div>
  </div>
   );

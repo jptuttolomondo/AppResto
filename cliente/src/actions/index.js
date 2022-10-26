@@ -8,8 +8,8 @@ return async function (dispatch){
 }
 export function getMozo(name){
     return async function (dispatch){
-        var response= await axios.get('http://localhost:3001/user?name='+ name)
-           return dispatch({type: 'GET_USER_BY_NAME', payload:response.data})
+        var response= await axios.get(`http://localhost:3001/users/${name}`)
+                 return dispatch({type: 'GET_USER_BY_NAME', payload:response.data})
     }
     }
 export function getAllcategories() {

@@ -3,8 +3,14 @@ require("dotenv").config;
 const { getUsuarios, deleteUser } = require("../helpers/user");
 module.exports = {
   async get(req, res) {
+let name=req.params.name
+  
     try {
-      const infoTotal = await getUsuarios();
+
+
+      const infoTotal = await getUsuarios(name);
+
+
       res.status(200).send(infoTotal);
     } catch (error) {
       console.log("Fail database connection");

@@ -199,6 +199,22 @@
   color: #0A4605;
   
   }
+  .Mozo{
+    position: absolute;
+width: 45px;
+height: 22px;
+left: 209px;
+top: 602px;
+
+font-family: 'Comic Sans MS';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+color: #000000;
+  }
   .Mesas-atras{
      position: absolute;
 width: 38px;
@@ -259,10 +275,10 @@ color: #000000;
 }
 .items{
   position: relative;
-  width: 42px;
-  height: 30px;
-  left: 22px;
-  top: 132px;
+
+  height: 10px;
+  left: 18px;
+  top: 124px;
   
   font-family: 'Comic Sans MS';
   font-style: italic;
@@ -272,11 +288,34 @@ color: #000000;
 }
 
 .filaItem1{
-  display:table-cell;
+  /*display:table-cell;
   flex-direction : row;
-
-    width:40px;
-    padding-right: 8rem;
+  height: 16px;
+    width:33px;
+    padding-right: 2rem;*/
+    display:table-cell;
+    flex-direction : row;
+  
+      width:40px;
+  
+      /*display: flex;*/
+  /*flex-direction: row;*/
+  align-items: flex-start;
+  /*padding: 10px 8px;*/
+  gap: 16px;
+  
+  width: 47px;
+  /*height: 16px;*/
+  
+  background: #CBACAC;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.35);
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .filaItem2{
@@ -288,20 +327,20 @@ color: #000000;
 
 
 
-    display: flex;
+   /* display: flex;*/
 flex-direction: row;
 align-items: flex-start;
-padding: 10px 8px;
+padding: 2px 95px;
 gap: 16px;
-
-position: absolute;
+/*height: 16px;*/
+/*position: absolute;*/
 left: 16.81%;
 right: 13.86%;
 top: 28.57%;
 bottom: 57.14%;
 
 background: #CBACAC;
-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.25);
+box-shadow: inset 1px -1px 0px rgba(0, -1, 0, 0.35);
 }
 
 .filaItem3{
@@ -310,17 +349,17 @@ box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.25);
 
     width:40px;
 
-    display: flex;
-flex-direction: row;
+    /*display: flex;*/
+/*flex-direction: row;*/
 align-items: flex-start;
-padding: 10px 8px;
+/*padding: 10px 8px;*/
 gap: 16px;
 
 width: 47px;
-height: 34px;
+/*height: 16px;*/
 
 background: #CBACAC;
-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+box-shadow: inset 1px -1px 0px rgba(0, 0, 0, 0.35);
 
 /* Inside auto layout */
 

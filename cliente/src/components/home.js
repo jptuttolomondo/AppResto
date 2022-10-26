@@ -1,5 +1,3 @@
-import logo from '../assets/mesa de cafe grande.svg'
-//import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './home.css';
 import {Link}from 'react-router-dom';    
 export function Home() {
@@ -13,7 +11,7 @@ export function Home() {
 <Link to ="/mesasPortada"><div className="landing-atencionMesas">Atención de Mesas</div></Link>
 <Link to ="/cocina"><div className="landing-cocina">Cocina</div></Link>
 <Link to ="/caja"><div className="landing-caja">Caja</div></Link>
-<div className="landing-logo"><img src={logo} alt=''/></div>
+<div className="landing-logo"><img src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666825686/appresto/mesa_de_cafe_grande_prlqnf.svg" alt=''/></div>
 <Link to ="/quit"><div className="landing-salir">Salir</div></Link>
  </div>
  </div>

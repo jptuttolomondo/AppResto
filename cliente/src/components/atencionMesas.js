@@ -1,8 +1,6 @@
 import { useState,useEffect } from 'react';
-import{ getAllMesas,getComandaId } from '../actions'
+import{ getAllMesas,getComandaId,getMozo } from '../actions'
 import { useDispatch, useSelector } from "react-redux";
-import logo from '../assets/undraw_conversation_re_c26v 1.png'
-import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import {Link} from 'react-router-dom'
 export function AtencionMesas() {
@@ -10,21 +8,12 @@ export function AtencionMesas() {
 let fecha =new Date()
 const mesas= useSelector((state)=>state.mesas)
 const comandas=useSelector((state)=>state.comanda)
-console.log(mesas)
-let aux=[]
-aux=comandas.items
-
-
-  
-
-//let muestraComanda=comandas.items
-
-//console.log('muestracomanda:',muestraComanda)
-console.log(fecha)
+const user=useSelector((state)=>state.user)
 
 useEffect(()=>{
 dispatch(getAllMesas())
 dispatch(getComandaId("38786180-81ec-4951-872d-adbeaa35a340"))
+dispatch(getMozo("Gloria"))
 },[dispatch])
 
   return (
@@ -59,20 +48,18 @@ dispatch(getComandaId("38786180-81ec-4951-872d-adbeaa35a340"))
   return(
 <div >
       <div class='filaItem1'>{e.cantidad}</div>
-      <div className='filaItem2'>{e.productoNombre}</div> 
-      <div className='filaItem3'>{e.totalParcial} </div>
+      <div class='filaItem2'>{e.productoNombre}</div> 
+      <div class='filaItem3' >{e.totalParcial} </div>
    </div>
   ) 
 })}</div>
 
-
-
-
 <div className="Mesas-total">Total:{comandas.total}</div>
 <div className="Mesas-agregarPedido">Nuevo Item</div>
 <div className="Mesas-nuevaMesa">Nueva Mesa</div>
-<Link to ="/mesasPortada"><div className="Mesas-mas"><img src={botonMas} alt='' /></div></Link>
-<div className="Mesas-logo"><img src={logo} alt='' /></div>
+<Link to ="/mesasPortada"><div className="Mesas-mas"><img src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666824874/appresto/bxs-plus-circle_1_edfipo.svg" alt='' /></div></Link>
+<div className="Mesas-logo"><img src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666824693/appresto/undraw_conversation_re_c26v_1_qbzozn.png" alt='' /></div>
+<div className='Mozo'>Mozo:{user} </div>
  </div>
  </div>
   );

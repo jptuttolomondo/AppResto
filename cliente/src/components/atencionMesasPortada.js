@@ -2,21 +2,16 @@ import React, { useEffect } from "react";
 import { getAllProducts,getAllcategories } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "./card";
-import foto from "../assets/denuncia extravio.jpeg";
 import portada from "./atencionMesasPortada.module.css";
 import {Link} from 'react-router-dom'
 import "./solapas.css";
-//import "./prueba.css";
+
 
 export function AtencionMesasPortada() {
   const dispatch = useDispatch();
   const Allproductos = useSelector((state) => state.products);
   const Allcategories=useSelector((state) => state.categories);
-  console.log(Allcategories);
 
-  console.log(Allcategories[0]);
- // console.log(ProdFiltered)
-let idIndex = 0;
   useEffect(() => {
     dispatch(getAllProducts());
     dispatch(getAllcategories());
@@ -29,7 +24,6 @@ let idIndex = 0;
 <div className={portada.Body}>
   <div className={portada.Encabezado}>Aplicación para restaurantes</div>
 
-
   <div class="tabs">
   <div class="tab-container">
 
@@ -41,11 +35,11 @@ let idIndex = 0;
        
         
       {   Allproductos.filter(e=>e.categoria === Allcategories[5])
-       . map(e=>{
+       .map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
                   
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+              <Card name={e.productName} description={e.description} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -66,11 +60,11 @@ let idIndex = 0;
        
         
       { 
-       Allproductos. map(e=>{
+       Allproductos.map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
                   
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+              <Card name={e.productName} description={e.description} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -89,12 +83,11 @@ let idIndex = 0;
        
         
       { 
-                    Allproductos?.
-                      map(e=>{
+                    Allproductos?.map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
                   
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+              <Card name={e.productName} description={e.description} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -113,12 +106,11 @@ let idIndex = 0;
        
         
       { 
-                    Allproductos?.
-                      map(e=>{
+                    Allproductos?.map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
                   
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+              <Card name={e.productName} description={e.description} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -131,12 +123,11 @@ let idIndex = 0;
       <a href="#tab2">{Allcategories[1]}</a>
       <div class="tab-content">
       { 
-                    Allproductos?.
-                      map(e=>{
+                    Allproductos?.map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
                   
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+              <Card name={e.productName} description={e.description} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -150,12 +141,12 @@ let idIndex = 0;
       <a href="#tab1">{Allcategories[0]}</a>
       <div class="tab-content">
       { //hacer filtros por categoria en redux
-                     Allproductos.filter(e=>e.categoria === Allcategories[0]).
-                      map(e=>{
+           Allproductos.filter(e=>e.categoria === Allcategories[0]).map(e=>{
                         return(   
+                          
                        <div className={portada.cards} key={e.id}  >
-                  
-              <Card name={e.productName} description={e.description} image={foto} precio={e.precio} key={e.id} />
+          
+              <Card name={e.productName} description={e.description} id={e.id} image={e.image} precio={e.precio} key={e.id} />
          
                </div>  
                 
@@ -170,7 +161,7 @@ let idIndex = 0;
 </div>
 
 <Link to="/mesas"><button className= {portada.botonNuevaComanda}>Nueva Comanda</button></Link>
-<button className= {portada.botonNuevoItem}>Agregar Item a la mesa</button>
+<button className= {portada.botonNuevoItem}>Agregar Item a la Comanda: </button>
 </div>
   )
 }

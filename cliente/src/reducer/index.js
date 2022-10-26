@@ -13,7 +13,7 @@ const initialState={
      case 'GET_ALL_CATEGORIES': return{...state,categories:action.payload}
     case 'GET_ALL_MESAS':  return{...state,mesas:action.payload}
     case 'GET_COMANDA_ID':  return{...state,comanda:action.payload}
-     
+    case 'GET_USER_BY_NAME': return{...state,user:action.payload}
           default:return state 
     }
     
