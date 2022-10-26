@@ -23,16 +23,7 @@
     align-items: center;
 
     text-align: center;
-    /*
-    color: rgb(196, 213, 228);
-    border-color: rgb(32, 80, 0);
-  
-    border-radius: 5%;
-    border-style: solid;
-    border-width: 5px;
-  
-    background-color: rgb(18, 19, 18);
-    */
+
     padding: 0.5em;
   
     transition: transform 1s; 
