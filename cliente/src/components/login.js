@@ -1,7 +1,7 @@
 
-import logo from '../assets/undraw_conversation_re_c26v.svg'
+//import logo from '../assets/undraw_conversation_re_c26v.svg'
 
-import botonMas from'../assets/bxs-plus-circle 1.svg'
+//import botonMas from'../assets/bxs-plus-circle 1.svg'
 import './atencionMesas.css';
 import searchBarStyle from './login.module.css';
 import {Link} from 'react-router-dom'
@@ -41,7 +41,7 @@ type='submit' >Login</button>
 
 
 
-<div ><img className={searchBarStyle.logoGrande}  src={logo} alt=''/></div>
+<div ><img className={searchBarStyle.logoGrande}  src="https://res.cloudinary.com/dzb1aoikl/image/upload/v1666824550/appresto/undraw_conversation_re_c26v_1_gzf8ct.svg" alt=''/></div>
  </div>
  </div>
   );

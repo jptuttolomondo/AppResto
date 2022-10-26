@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import {useEffect } from 'react';
 import{ getAllMesas,getComandaId,getMozo } from '../actions'
 import { useDispatch, useSelector } from "react-redux";
 import './atencionMesas.css';
