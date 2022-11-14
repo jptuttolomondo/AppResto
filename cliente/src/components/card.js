@@ -12,12 +12,16 @@ export default function Card({name,description,id,image,precio,key}){
    const dispatch=useDispatch()
 
    const comandas=useSelector((state)=>state.comanda)
-
+   console.log(comandas)
+   let aux=comandas.items.map(el=>{
+      if(el. productoNombre===name) return  el.cantidad
+      else return false
+   })
 const [items,setItems]=useState({
-   cantidad: '' ,
-   precio:'',
-   productoNombre:'',
-   totalParcial:''
+   cantidad: aux[0]+1 ,
+   productoNombre:name,
+   precio:precio,
+   totalParcial:precio*(aux[0]+1)
 
 })
    

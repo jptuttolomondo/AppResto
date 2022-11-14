@@ -29,6 +29,7 @@ export function getAllcategories() {
     export function getComandaId(id) {
         return async function (dispatch) {
             var response=await axios.get(`http://localhost:3001/comandas/${id}`)
+            console.log(response.data)
             return dispatch({type: 'GET_COMANDA_ID',payload: response.data})
         }
     }
