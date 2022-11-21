@@ -24,13 +24,13 @@ export function AtencionMesasPortada() {
 <div className={portada.Body}>
   <div className={portada.Encabezado}>Aplicación para restaurantes</div>
 
-  <div class="tabs">
-  <div class="tab-container">
+  <div className="tabs">
+  <div className="tab-container">
 
 
-  <div id="tab6" class="tab"> 
+  <div id="tab6" className="tab"> 
       <a href="#tab6">{Allcategories[5]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
      
        
         
@@ -53,9 +53,9 @@ export function AtencionMesasPortada() {
 
 
 
-  <div id="tab5" class="tab"> 
+  <div id="tab5" className="tab"> 
       <a href="#tab5">{Allcategories[4]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
      
        
         
@@ -76,9 +76,9 @@ export function AtencionMesasPortada() {
 
 
 
-  <div id="tab4" class="tab"> 
+  <div id="tab4" className="tab"> 
       <a href="#tab4">{Allcategories[3]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
      
        
         
@@ -99,9 +99,9 @@ export function AtencionMesasPortada() {
 
 
 
-    <div id="tab3" class="tab"> 
+    <div id="tab3" className="tab"> 
       <a href="#tab3">{Allcategories[2]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
      
        
         
@@ -119,9 +119,9 @@ export function AtencionMesasPortada() {
                     }
       </div>
     </div>
-    <div id="tab2" class="tab">
+    <div id="tab2" className="tab">
       <a href="#tab2">{Allcategories[1]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
       { 
                     Allproductos?.map(e=>{
                         return(   
@@ -137,9 +137,9 @@ export function AtencionMesasPortada() {
    
       </div>
     </div> 
-    <div id="tab1" class="tab">
+    <div id="tab1" className="tab">
       <a href="#tab1">{Allcategories[0]}</a>
-      <div class="tab-content">
+      <div className="tab-content">
       { //hacer filtros por categoria en redux
            Allproductos.filter(e=>e.categoria === Allcategories[0]).map(e=>{
                         return(   

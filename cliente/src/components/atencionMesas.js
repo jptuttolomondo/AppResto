@@ -8,14 +8,15 @@ export function AtencionMesas() {
 let fecha =new Date()
 const mesas= useSelector((state)=>state.mesas)
 const comandas=useSelector((state)=>state.comanda)
+//hay que crear una comanda vacia que devuelva un id y crearle todos los datos
 const user=useSelector((state)=>state.user)
-
+//console.log(comandas.items)
 useEffect(()=>{
 dispatch(getAllMesas())
-dispatch(getComandaId("38786180-81ec-4951-872d-adbeaa35a340"))
-dispatch(getMozo("Gloria"))
+dispatch(getComandaId("a6ae3949-a6fd-404f-9bd3-8ed6e99535b5"))//rremplazar por nueva comanda
+dispatch(getMozo("Gloria")) //un id de mozo activo user
 },[dispatch])
-
+//hay que guardar la nueva comanda con un post o un put si ya existe
   return (
     <div align="center">
 <div className="Mesas-body">
@@ -39,17 +40,18 @@ dispatch(getMozo("Gloria"))
   ))}
 </select>
 </div>
+
 <div className="encabezadoItems"></div>
 <div className="cantidad">Cantidad</div>
 <div className="producto">Producto</div>
 <div className="precioUnitario">P.Unit</div>
 
-<div className="items" key="cantidad">{comandas.items?.map(e=>{
+<div className="items">{comandas.items?.map((e,index)=>{//al ser un array sin indice se le agrega para la key
   return(
-<div >
-      <div class='filaItem1'>{e.cantidad}</div>
-      <div class='filaItem2'>{e.productoNombre}</div> 
-      <div class='filaItem3' >{e.totalParcial} </div>
+<div key={index}>
+      <div className='filaItem1'>{e.cantidad}</div>
+      <div className='filaItem2'>{e.productoNombre}</div> 
+      <div className='filaItem3' >{e.totalParcial} </div>
    </div>
   ) 
 })}</div>

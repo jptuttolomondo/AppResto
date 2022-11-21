@@ -5,7 +5,7 @@ module.exports = {
   async get(req, res) {
     let idComanda=req.params;
     let infoTotal;
-    console.log(idComanda);
+    console.log('comanda Id:',idComanda);
     if(!idComanda){
      infoTotal = await getComandas();
 
@@ -18,26 +18,25 @@ module.exports = {
 
   async post(req, res) {
     try {
-      let { mesa, estado,  tipoDePago, usuario, items } = req.body;
-      let getuser = await User.findOne({ where: { nombre: usuario } });
-      let getmesa = await Mesa.findOne({ where: { mesa: mesa } });
+       let { mesa, estado,  tipoDePago, usuario, items } = req.body;
+       let getuser = await User.findOne({ where: { nombre: usuario } });
+       let getmesa = await Mesa.findOne({ where: { mesa: mesa } });
       
 
-      //no podemos saber si una comanda exactamente igual a otra fue creada por error o no
-      //eso hay que controlarlo en front. Pruede haber 2 comandas exactamente iguales y ser legales las dos
-//entonces es create directamente
+//       //no podemos saber si una comanda exactamente igual a otra fue creada por error o no
+//       //eso hay que controlarlo en front. Pruede haber 2 comandas exactamente iguales y ser legales las dos
+// //entonces es create directamente
 
-     console.log('hola1')   
       const registro = await Comanda.create({
-        
           estado: estado,
           total: 0,
           tipoDePago: tipoDePago,
           mesaIdMesa: getmesa.id_mesa,
           userIdUser: getuser.id_user,
             })
-            //console.log('registro:',registro)
+        console.log(items.length)
             let suma=0
+            if(items.length>0){
       await Promise.all(
         items.map(async (elemitem) => {
           let productoId = await Producto.findOne({
@@ -46,7 +45,7 @@ module.exports = {
       //     console.log('precio:',productoId.precio)
       //  let TotalParcial1=elemitem.cantidad*productoId.precio
       //     console.log('parcial:',TotalParcial1)
-        
+        if(items.length>0){
           let regItem = await Item.create({
       
               cantidad: elemitem.cantidad,
@@ -55,7 +54,7 @@ module.exports = {
               productoId: productoId.id,
           
           });
-
+        
          console.log('regitems:',regItem)
       
          suma=suma+ regItem.totalParcial
@@ -68,12 +67,15 @@ module.exports = {
             where:{id:registro.id} ,
           })
         
-       }));
-      
-     //  if (created === false) res.status(200).send("el comanda ya existe");
-      // else
-      
-      res.status(200).send("Comanda creada correctamente");
+       }
+      }
+       ));
+            }
+
+  
+      else{
+      console.log(registro.id)
+      res.status(200).send(registro.id);}
     } catch (error) {
       res.status(400).send(error);
  
@@ -81,6 +83,7 @@ module.exports = {
   },
 async getComandaPorId(req, res){
   try {
+    console.log('hola1')
     let id = req.params.id;
    
 
@@ -90,10 +93,8 @@ async getComandaPorId(req, res){
           througth: { attributes: ["productname", "description", "userIdUser"] },
         }
     });
-
+console.log(comandaPorId)
     if (comandaPorId) {
-     
-    
       let salida = {
         usuario: await usuario1(comandaPorId.userIdUser),
         id_comanda: comandaPorId.id,

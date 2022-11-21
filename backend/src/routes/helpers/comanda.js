@@ -72,6 +72,7 @@ const getComandas = async (idComanda) => {
 
     })
   );
+  console.log('hola3')
   }else{
     let comandaPorId = await Comanda.findByPk(idComanda
  
