@@ -34,7 +34,7 @@ export function AtencionMesasPortada() {
      
        
         
-      {   Allproductos.filter(e=>e.categoria === Allcategories[5])
+      {   /*Allproductos.filter(e=>e.categoria === Allcategories[5])
        .map(e=>{
                         return(   
                        <div className={portada.cards} key={e.id}  >
@@ -45,7 +45,7 @@ export function AtencionMesasPortada() {
                 
                      )
                      })
-                    }
+                    */ }
       </div>
     </div>
 
