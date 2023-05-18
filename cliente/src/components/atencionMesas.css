@@ -312,7 +312,7 @@ text-align: center;
 
 color: #000000;
 }
-.precioUnitario{
+.subtotal{
   position: absolute;
 width: 72px;
 height: 14px;
@@ -335,7 +335,7 @@ color: #000000;
 
   height: 10px;
   left: 18px;
-  top: 100px;
+  top: 122px;
   
   font-family: 'Comic Sans MS';
   font-style: italic;

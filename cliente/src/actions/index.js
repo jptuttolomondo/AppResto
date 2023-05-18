@@ -44,3 +44,39 @@ export function getAllcategories() {
         }
        
     }
+
+    
+    export function postComanda(payload){
+        return  function(dispatch){
+            //DESDE ACA HAGO UN POST DE COMANDA VACIO Y DEBER TERORENAR UN ID CON EL CUAL HAGO UN GET Y RETORNO EL GET
+             return dispatch({type:'NUEVA_COMANDA',payload:payload})
+        }
+       
+    }
+
+        
+    export function actualizarComanda(payload){
+        return  function(dispatch){
+            //DESDE ACA HAGO UN POST DE COMANDA VACIO Y DEBER TERORENAR UN ID CON EL CUAL HAGO UN GET Y RETORNO EL GET
+             return dispatch({type:'ACTUALIZAR_COMANDA',payload:payload})
+        }
+       
+    }
+
+          
+    export function actualizarProducto(payload){
+        return  function(dispatch){
+            //DESDE ACA HAGO UN POST DE COMANDA VACIO Y DEBER TERORENAR UN ID CON EL CUAL HAGO UN GET Y RETORNO EL GET
+             return dispatch({type:'ACTUALIZAR_PRODUCTO',payload:payload})
+        }
+       
+    }
+
+              
+    export function  calcularSubtotal(payload){
+        return  function(dispatch){
+            //DESDE ACA HAGO UN POST DE COMANDA VACIO Y DEBER TERORENAR UN ID CON EL CUAL HAGO UN GET Y RETORNO EL GET
+             return dispatch({type:'CALCULAR_SUBTOTAL',payload:payload})
+        }
+       
+    }
