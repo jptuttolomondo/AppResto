@@ -205,8 +205,17 @@ background: #427C9D;
   left: 16px;
   top: 540px;
   
-  background: #000000;
+
   }
+
+.Mesas-nuevoItem{
+  position: absolute;
+  width: 68px;
+  height: 61px;
+  left: 16px;
+  top: 580px;
+}
+
 .Mesas-mas1{
   
     position: absolute;

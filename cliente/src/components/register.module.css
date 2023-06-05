@@ -1,0 +1,634 @@
+.bloque {
+    display: inline;
+    padding: 3px;
+
+}
+.subtitulo1{
+   
+    position: absolute;
+    width: 240px;
+    height: 42px;
+    left: 95px;
+    top: 104px;
+    
+    background: linear-gradient(92.33deg, #29BC1C 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+    border: 4px solid #107E1B;
+    border-radius: 23px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 35px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #000000;
+    
+    }
+.nombreTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 41px;
+    top: 197px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputNombre {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 413px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputNombre::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputNombre:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.apellidoTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 41px;
+    top: 248px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputApellido {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 361px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputApellido::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputApellido:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.dniTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 25px;
+    top: 296px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputDni {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 312px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputDni::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputDni:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.direccionTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 41px;
+    top: 337px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputDireccion {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 269px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputDireccion::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputDireccion:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.usuarioTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 41px;
+    top: 380px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputUsuario {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 228px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputUsuario::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputUsuario:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.contraseñaTexto {
+    position: absolute;
+    width: 81px;
+    height: 28px;
+    left: 41px;
+    top: 425px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputContraseña {
+    position: absolute;
+    width: 162px;
+    height: 28px;
+    left: calc(50% - 162px/2 + 62px);
+    bottom: 185px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputContraseña::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputContraseña:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.FechaIngresoTexto {
+    position: absolute;
+    width: 148px;
+    height: 28px;
+    left: 41px;
+    top: 473px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputFechaIngreso {
+    position: absolute;
+    width: 118px;
+    height: 28px;
+    left: calc(50% - 75px/2 + 62px);
+    bottom: 132px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputFechaIngreso::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputFechaIngreso:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.DiaPagoTexto {
+    position: absolute;
+    width: 130px;
+    height: 28px;
+    left: 41px;
+    top: 522px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.inputDiaPago {
+    position: absolute;
+    width: 80px;
+    height: 28px;
+    left: calc(50% - 11px/2 + 62px);
+    bottom: 79px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    background: linear-gradient(92.33deg, #C3EAEA 11.92%, rgba(151, 239, 234, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+
+.inputDiaPago::placeholder {
+    text-align: center;
+    color: blue;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputDiaPago:focus {
+    border: 7px solid #1ccc42;
+    outline: none;
+}
+
+.botonRegister {
+
+    position: absolute;
+    width: 189px;
+    height: 37px;
+    left: 155px;
+    top: 576px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+    position: absolute;
+    width: 189px;
+    height: 37px;
+    left: calc(50% - 151px/2);
+    bottom: 219px;
+
+    background: linear-gradient(92.33deg, #3cb93a 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+
+}
+
+.botonRegister:hover{
+  
+    background: #0DE8A6;;
+    color: var(--color-bg);
+  
+}
+.botonRegister:active{
+  
+    background: #e80dd2;;
+    color: var(--color-bg);
+  
+}
+
+.botonVolver {
+    position: absolute;
+    width: 189px;
+    height: 37px;
+    left: 155px;
+    top: 104px;
+
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+    position: absolute;
+    width: 66px;
+    height: 37px;
+    left: calc(50% - 349px/2);
+    bottom: 219px;
+
+    background: linear-gradient(92.33deg, #3cb93a 11.92%, rgba(28, 188, 178, 0.77) 83.97%);
+    border: 4px solid #2D107E;
+    border-radius: 23px;
+}
+.createValidFirstName{
+    color: red;
+    position: absolute;
+      top: 174px;
+    left: 36px;
+    font-size: 12px;
+    font-style: italic;
+    font-family: cursive;
+    width: 140px;
+    text-align: left;
+    }
+
+    .createValidLastName{
+        color: red;
+        position: absolute;
+          top: 229px;
+        left: 36px;
+        font-size: 12px;
+        font-style: italic;
+        font-family: cursive;
+        width: 140px;
+        text-align: left;
+        }
+
+
+        .createValidDni{
+            color: red;
+            position: absolute;
+              top: 281px;
+            left: 40px;
+            font-size: 12px;
+            font-style: italic;
+            font-family: cursive;
+            width: 140px;
+            text-align: left;
+            }
+
+            .createValidUsername{
+                color: red;
+                position: absolute;
+                  top: 366px;
+                left: 40px;
+                font-size: 12px;
+                font-style: italic;
+                font-family: cursive;
+                width: 140px;
+                text-align: left;
+                }
+
+                
+            .createValidPassword {
+                color: red;
+                position: absolute;
+                  top: 412px;
+                left: 40px;
+                font-size: 12px;
+                font-style: italic;
+                font-family: cursive;
+                width: 140px;
+                text-align: left;
+                }
+
+                .createValidFechaIngreso {
+                    color: red;
+                    position: absolute;
+                      top: 455px;
+                    left: 40px;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-family: cursive;
+                    width: 140px;
+                    text-align: left;
+                    }
+                .createValidDiaPago {
+                    color: red;
+                    position: absolute;
+                      top: 504px;
+                    left: 40px;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-family: cursive;
+                    width: 140px;
+                    text-align: left;
+                    }
+
+                    .createValidDireccion {
+                        color: red;
+                        position: absolute;
+                          top: 324px;
+                        left: 40px;
+                        font-size: 12px;
+                        font-style: italic;
+                        font-family: cursive;
+                        width: 140px;
+                        text-align: left;
+                        }
